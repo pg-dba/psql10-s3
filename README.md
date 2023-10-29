@@ -9,7 +9,7 @@ mc RELEASE.2023-10-24T21-42-22Z
 <BR><BR>
 <B>examples:</B><BR>
 <BR>
-docker build -t psql-s3 .
+docker build -t psql-s3:10 .
 
 docker run --rm --network host --name psql-s3 --hostname psql-s3 -it \\<BR>
  -e MINIO_BACKET=mybackups \\<BR>
@@ -17,7 +17,7 @@ docker run --rm --network host --name psql-s3 --hostname psql-s3 -it \\<BR>
  -e AWS_SECRET_ACCESS_KEY=P@ssw0rd \\<BR>
  -e MINIO_ENDPOINT_URL=http://u20d1h4:9000 \\<BR>
  -v /data/postgres:/var/lib/postgresql/data \\<BR>
- psql-s3 bash
+ psql-s3:10 bash
 
 docker run --rm --network host --name psql-s3 --hostname psql-s3 -it \\<BR>
  -e MINIO_BACKET=backups \\<BR>
@@ -25,5 +25,5 @@ docker run --rm --network host --name psql-s3 --hostname psql-s3 -it \\<BR>
  -e AWS_SECRET_ACCESS_KEY=P@ssw0rd \\<BR>
  -e MINIO_ENDPOINT_URL=http://172.27.172.91:30000 \\<BR>
  -v /data/pg1/data:/var/lib/postgresql/data \\<BR>
- psql-s3 bash
+ psql-s3:10 bash
 
